@@ -29,6 +29,10 @@
     // Insert image path here - we do not use the slash (/); instead of "/images/image.jpg", we use "image/image.jpg", without slash
     $image = "your-image-folder/your-image-file-name.jpg";
     // End image variable
+    
+    // Insert alt for the above image
+    $alt = "Your alt text";
+    // End image alt variable
 
     // This is image variable URL absolute path
     $image_url = $url . $image;
@@ -61,3 +65,9 @@
 `<a href="https://twitter.com/home?status=<?php echo "$url"; ?>">Share on Twitter</a>`
 ## Google Plus:
 `<a href="https://plus.google.com/share?url=<?php echo "$url"; ?>">Share on Google+</a>`
+
+**To render the image in BODY**
+
+~~~~
+<img src="<?php echo htmlspecialchars($image); ?>" alt="<?php echo $alt; ?>">
+~~~~
