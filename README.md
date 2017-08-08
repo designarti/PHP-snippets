@@ -12,3 +12,33 @@
 `<a href="https://twitter.com/home?status=<?php echo "$current_page"; ?>">Share on Twitter</a>`
 ## Google Plus:
 `<a href="https://plus.google.com/share?url=<?php echo "$current_page"; ?>">Share on Google+</a>`
+
+**This is to render page specific variables**
+
+~~~~
+<?php
+    // Insert meta title here
+    $title = "Your Page Meta Title";
+    // End meta title
+
+    // Insert meta description here
+    $description = "Your Page Meta Description";
+    // End meta description
+
+    // This is the variable for URL, even if it has httpS instead of http
+    $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] && !in_array(strtolower($_SERVER['HTTPS']),array('off','no'))) ? 'https' : 'http';
+    $url .= '://'.$_SERVER['HTTP_HOST'];
+    $url .= $_SERVER['REQUEST_URI'];
+    if (!empty($_SERVER['PATH_INFO'])) $url .= $_SERVER['PATH_INFO'];
+    if (!empty($_SERVER['QUERY_STRING'])) $url .= '?'.ltrim($_SERVER['REQUEST_URI'],'?');
+    // End URL variable
+
+    // Insert image path here - we do not use the slash (/); instead of "/images/image.jpg", we use "image/image.jpg", without slash
+    $image = "your-image-folder/your-image-file-name.jpg";
+    // End image variable
+
+    // This is image variable URL absolute path
+    $image_url = $url . $image;
+    // End image URL variable
+?>
+~~~~
