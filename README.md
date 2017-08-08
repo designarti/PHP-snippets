@@ -1,5 +1,11 @@
 # PHP-snippets
 
+## A simple include
+
+~~~~
+<?php include_once $_SERVER['DOCUMENT_ROOT'] . ("/include-folder-name/include-file-name.php"); ?>
+~~~~
+
 ## This is to render page specific variables:
 
 ~~~~
