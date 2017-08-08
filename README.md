@@ -50,7 +50,7 @@
 <meta name="description" content="<?php echo $description; ?>">
 ~~~~
 
-### According to [Facebook Developers Guide](https://developers.facebook.com/docs/sharing/webmasters "Facebook for Developers") we should have og:data. This is how we insert the variables for FB, using the above codes:
+### According to [Facebook Developers Guide](https://developers.facebook.com/docs/sharing/webmasters "Facebook for Developers" target="_blank") we should have og:data. This is how we insert the variables for FB, using the above codes:
 
 ~~~~
 <meta property="og:url" content="<?php echo $url; ?>">
