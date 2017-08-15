@@ -71,3 +71,12 @@
 ~~~~
 <img src="<?php echo htmlspecialchars($image); ?>" alt="<?php echo $alt; ?>">
 ~~~~
+
+**To display .html pages using PHP**
+We create .htaccess si we respect URL structure, with the .html extension. All visible links are .html, but we only work on .php files on the server.
+~~~~
+RewriteEngine on
+RewriteRule ^(.*)\.html$ $1.php [nc]
+RewriteCond %{THE_REQUEST} \ /(.+)\.php
+RewriteRule ^ /%1.html [L,R=301]
+~~~~
